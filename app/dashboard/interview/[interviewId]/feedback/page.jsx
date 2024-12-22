@@ -93,9 +93,9 @@ const Feedback = ({ params }) => {
                         </div>
                     ))}
 
-                    <Button onClick={() => router.replace('/dashboard')}>Go Home</Button>
 
                 </>}
+                    <Button onClick={() => router.replace('/dashboard')}>Go Home</Button>
         </div>
     )
 }
