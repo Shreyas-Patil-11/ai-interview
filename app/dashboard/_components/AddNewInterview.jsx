@@ -40,7 +40,10 @@ const AddNewInterview = () => {
     try {
       console.log(jobPosition, jobDesc, jobExperience);
   
-      const InputPrompt = `Job Position: ${jobPosition}, Job Description: ${jobDesc}, Years of Experience: ${jobExperience}. Depends on this information please give me ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions with answer in Json Format. Give question and answer as field in JSON. And remove ${'```json'} from starting and ${'```'} from the end of output`;
+      // const InputPrompt = `Job Position: ${jobPosition}, Job Description: ${jobDesc}, Years of Experience: ${jobExperience}. Depends on this information please give me ${process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT} interview questions with answer in Json Format. Give question and answer as field in JSON. And remove ${'```json'} from starting and ${'```'} from the end of output`;
+
+      const InputPrompt = "Job Position:" + jobPosition +", Job Description:"+jobDesc + ", Years of Experience: " + jobExperience+ ". Depends on this information please give me"+ process.env.NEXT_PUBLIC_INTERVIEW_QUESTION_COUNT+ " interview questions with answer in Json Format. Give question and answer as field in JSON. And remove '```json' from starting and '```' from the end of output";
+  
   
       // const result = await chatSession.sendMessage(InputPrompt);
       // const MockJsonResp = (await result.response.text())
@@ -48,13 +51,14 @@ const AddNewInterview = () => {
       //   .replace('```', '')
 
       const result = await chatSession.sendMessage(InputPrompt);
-      const responseText = await result.response.text();
+      const responseText = result.response.text();
       console.log('Response Text:', responseText); // Debug the response text
-      const MockJsonResp = responseText.replace('```json', '').replace('```', '');
+      const MockJsonResp = responseText.replace(/```json/g, '')  // Replace all occurrences of ```json
+      .replace(/```/g, '');
       console.log('Modified Response:', MockJsonResp); // Check the result
 
 
-      console.log(JSON.parse(MockJsonResp));
+      // console.log(JSON.parse(MockJsonResp));
       setJsonResponse(MockJsonResp);
   
       if (MockJsonResp) {

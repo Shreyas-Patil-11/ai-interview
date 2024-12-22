@@ -35,7 +35,7 @@ const Feedback = ({ params }) => {
         setFeedbackList(result)
     }
 
-    const averageRating = feedbackList.reduce((sum, item) => sum + item.rating, 0) / 5;
+    const averageRating = feedbackList.reduce((sum, item) => sum + item.rating, 0) /5;
 
     return (
         <div className='p-10'>
@@ -49,7 +49,7 @@ const Feedback = ({ params }) => {
 
                     <h2 className='font-bold text-2xl'>Here is your interview feedback</h2>
 
-                    <h2 className='text-primary text-lg my-3'>Your overall interview rating: <strong>{averageRating && averageRating.toFixed(1)}/10</strong></h2>
+                    <h2 className='text-primary text-lg my-3'>Your overall interview rating: <strong>{averageRating && averageRating.toFixed(1)}</strong></h2>
 
                     <h2 className='text-sm text-gray-500'>Find below interview question with correct answer, Your answer and feedback for improvement</h2>
 
