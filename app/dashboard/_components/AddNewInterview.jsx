@@ -91,9 +91,9 @@ const AddNewInterview = () => {
   
 
   return (
-    <div>
+    <div >
       <div
-        className='p-9 border rounded-lg bg-secondary hover:scale-105 hover:shadow-md cursor-pointer transition-all'
+        className=' p-9 border rounded-lg bg-[#fbf9ff] hover:scale-105 hover:shadow-md cursor-pointer transition-all'
         onClick={() => setOpenDailog(true)}
       >
         <h2 className='text-lg text-center'>+ Add New</h2>
