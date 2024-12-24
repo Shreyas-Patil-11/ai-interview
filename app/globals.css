@@ -75,4 +75,24 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  ::-webkit-scrollbar {
+    width: 10px; /* Adjust width of the scrollbar */
+    height: 10px; /* Adjust height for horizontal scrollbar */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: hsl(var(--primary)); /* Scrollbar thumb color */
+    border-radius: var(--radius); /* Round scrollbar thumb corners */
+    border: 2px solid transparent; /* Add space around the thumb */
+    background-clip: padding-box; /* Ensure the thumb color shows correctly */
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: hsl(var(--muted)); /* Scrollbar track color */
+    border-radius: var(--radius); /* Round scrollbar track corners */
+  }
+
+  .dark ::-webkit-scrollbar-track {
+    background-color: hsl(var(--background));
+  }
 }
