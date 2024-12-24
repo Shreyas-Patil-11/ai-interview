@@ -38,7 +38,7 @@ const Feedback = ({ params }) => {
     const averageRating = feedbackList.reduce((sum, item) => sum + item.rating, 0) /5;
 
     return (
-        <div className='p-10'>
+        <div className='p-20'>
 
 
             {feedbackList?.length === 0 ?

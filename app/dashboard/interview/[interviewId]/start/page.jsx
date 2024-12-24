@@ -62,7 +62,7 @@ const StartInterview = ({ params }) => {
                     interviewData={interviewData}
                 />
             </div>
-            <div className='flex justify-end gap-6'>
+            <div className='flex justify-end gap-6 md:mb-5 sm:mb-5'>
                 {activeQuestionIndex > 0 && <Button onClick={() => setActivequestionIndex(activeQuestionIndex - 1)}>Previous Question</Button>}
 
                 
