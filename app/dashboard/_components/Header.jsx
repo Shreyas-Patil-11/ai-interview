@@ -74,7 +74,7 @@ const Header = () => {
                                 className='w-full'
                                 onClick={onDashboard}
                             >
-                                Sign In
+                                Sign up
                             </Button>
                             <Button
                                 size='sm'
